@@ -1,5 +1,11 @@
 class Menu {
     constructor() {
+        let logo = createImg("images/dicer.png","Dicer logo")
+        logo.parent("sketch-container")
+        logo.size(100,100)
+        let label = createP("Dicer")
+        label.parent("sketch-container")
+        label.id("logo")
         this.input = createFileInput(this.createImage)
         this.input.parent("sketch-container")
         this.input.hide()
@@ -8,7 +14,10 @@ class Menu {
         butt.mouseClicked(()=>this.input.elt.click())
         let saveButt = createButton("Save Dicer")
         saveButt.parent("sketch-container")
+        saveButt.mouseClicked(()=>{saveCanvas()})
         
+        let copyrt = createP("(c) Alex Mendelsberg 2026")
+        copyrt.id("copyright")
 
     }
 
