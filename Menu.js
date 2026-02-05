@@ -15,16 +15,49 @@ class Menu {
         let saveButt = createButton("Save Dicer")
         saveButt.parent("sketch-container")
         saveButt.mouseClicked(()=>{saveCanvas()})
-        
+        let cubeSel = createSelect(false)
+        cubeSel.parent("sketch-container")
+
+        for(let i = 1; i <= 3; i++){
+            cubeSel.option(i*10)
+        }
+
+        cubeSel.changed(()=>{
+            spacing = int(cubeSel.selected())
+            this.remakeImage()
+        })
+
         let copyrt = createP("(c) Alex Mendelsberg 2026")
         copyrt.id("copyright")
 
+
+
+    }
+
+    remakeImage(){
+        if (img == undefined) return;
+        dice = []
+        img.loadPixels();
+
+           let pix =img.pixels;
+           resizeCanvas(img.width,img.height)
+            for(let i = 0; i <img.width; i+=spacing){
+                for(let j = 0; j <img.height; j+=spacing){
+                    let idx = i + j * img.width
+                    let c = color(pix[idx*4],pix[idx*4+1],pix[idx*4+2])
+                    let brt = floor(brightness(c)/8.4)
+                 
+                    dice.push(new diceObj(i/spacing,j/spacing,min(brt,12)))
+                }
+            }
+           loop()
     }
 
     createImage(file){
         if(file.type != 'image')return
         img = loadImage(file.data, () => {     
         img.loadPixels();
+
            let pix =img.pixels;
            resizeCanvas(img.width,img.height)
             for(let i = 0; i <img.width; i+=spacing){

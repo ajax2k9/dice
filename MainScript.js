@@ -11,7 +11,12 @@ menu = new Menu()
 
 
 function draw(){
-    background(50,50,100);
+    if(dice.length == 0){
+        background(50,50,100);
+    } else {
+        background(50,50,50);
+    }
+        
     dice.forEach(d=>d.draw())
     noLoop()
 }
