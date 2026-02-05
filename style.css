@@ -28,16 +28,21 @@ button{
     padding-left: 10px;
     padding-right: 10px;
     letter-spacing: 2px;
-    margin: 0px 10px 0px 10px;
+    margin-left: 10px;
 }
+
+button:hover{
+    border-color: blueviolet;
+}
+
 #logo{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-style:italic;
-    font-weight: bold;
+    font-weight:100;
     font-size: 40px;
     color: white;
-  -webkit-text-stroke-width: 1px; /* The thickness of the outline */
-  -webkit-text-stroke-color: black; /* The color of the outline */
+    margin-right: 10px;
+    margin-left: 5px;
     
 }
 
@@ -47,6 +52,16 @@ button{
     color: white;  
 }
 
-button:hover{
-    border-color: blueviolet;
+#cubeSel{
+    width:100px;
+    height: 42px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: black;
+    border:solid 5px azure;
+    box-shadow: none;
+    color: aliceblue;
+    margin-left: 10px;
+    font-size: 20px;
 }
+

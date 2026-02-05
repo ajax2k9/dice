@@ -27,6 +27,7 @@ class Menu {
             this.remakeImage()
         })
 
+        cubeSel.id("cubeSel")
         let copyrt = createP("(c) Alex Mendelsberg 2026")
         copyrt.id("copyright")
 
