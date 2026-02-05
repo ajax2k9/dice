@@ -10,32 +10,32 @@ class diceObj {
         let pipLocs = [];
         let s = spacing/4
         switch(num){
-            case 1:
+            case 0:
                 pipLocs.push(createVector(0,0));
                 break;
+            case 1:
+                pipLocs.push(createVector(-1,-1));
+                pipLocs.push(createVector(1,1));
+                break;
             case 2:
+                pipLocs.push(createVector(0,0));
                 pipLocs.push(createVector(-1,-1));
                 pipLocs.push(createVector(1,1));
                 break;
             case 3:
-                pipLocs.push(createVector(0,0));
-                pipLocs.push(createVector(-1,-1));
                 pipLocs.push(createVector(1,1));
+                pipLocs.push(createVector(1,-1));
+                pipLocs.push(createVector(-1,1));
+                pipLocs.push(createVector(-1,-1));
                 break;
             case 4:
                 pipLocs.push(createVector(1,1));
                 pipLocs.push(createVector(1,-1));
                 pipLocs.push(createVector(-1,1));
                 pipLocs.push(createVector(-1,-1));
-                break;
-            case 5:
-                pipLocs.push(createVector(1,1));
-                pipLocs.push(createVector(1,-1));
-                pipLocs.push(createVector(-1,1));
-                pipLocs.push(createVector(-1,-1));
                 pipLocs.push(createVector(0,0));
                 break;
-            case 6:
+            case 5:
                 pipLocs.push(createVector(1,1));
                 pipLocs.push(createVector(1,-1));
                 pipLocs.push(createVector(-1,1));
@@ -64,10 +64,9 @@ class diceObj {
         let b_idx = this.val
         
         if(b_idx < 6){
-            this.drawPips(b_idx+1,false)
+            this.drawPips(b_idx,false)
         }else {
-            b_idx-=6;
-            this.drawPips(6-b_idx,true)
+            this.drawPips(11-b_idx,true)
         }
     }
 }

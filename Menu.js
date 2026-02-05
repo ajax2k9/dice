@@ -31,7 +31,7 @@ class Menu {
                 for(let j = 0; j <img.height; j+=spacing){
                     let idx = i + j * img.width
                     let c = color(pix[idx*4],pix[idx*4+1],pix[idx*4+2])
-                    let brt = floor(brightness(c)/8.33)
+                    let brt = floor(brightness(c)/8.4)
                  
                     dice.push(new diceObj(i/spacing,j/spacing,min(brt,12)))
                 }
